@@ -5,12 +5,11 @@ var ajaxCall = (query, language) => {
     $.ajax({
       url: "https://martin-inviting-wolf.ngrok-free.app",
       type: "POST",
-      dataType: "json",
       data: JSON.stringify({
         query: query,
         language: language
       }),
-      crossDomain: true,
+      // crossDomain: true,
       success: function (response, status, xhr) {
         resolve({ response, status, xhr });
       },
