@@ -1,4 +1,6 @@
 var ajaxCall = (query, language) => {
+  console.log(query);
+  console.log(language);
   return new Promise((resolve, reject) => {
     $.ajax({
       url: "https://martin-inviting-wolf.ngrok-free.app",
