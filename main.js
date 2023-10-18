@@ -3,12 +3,16 @@ var ajaxCall = (query, language) => {
   console.log(language);
   return new Promise((resolve, reject) => {
     $.ajax({
-      url: "https://martin-inviting-wolf.ngrok-free.app",
+      url: "http://localhost:3000/embedding",
       type: "POST",
       data: JSON.stringify({
         query: query,
         language: language
       }),
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin":"*"
+      },
       // crossDomain: true,
       success: function (response, status, xhr) {
         resolve({ response, status, xhr });
